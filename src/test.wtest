@@ -1,0 +1,44 @@
+import estudiantes.*
+import materias.*
+import carreras.*
+
+describe ""{
+	
+	var licEnInfo = new Carrera(materias = [])
+	
+	var ariel = new Estudiante(carrerasQueCursa = [licEnInfo], 
+							   materiasAprobadas = ["mate", "objetos1"],
+							   creditosAcumulados = 100)
+	
+	var tomas = new Estudiante(carrerasQueCursa = [licEnInfo], 
+							   materiasAprobadas = ["mate", "objetos1"],
+							   creditosAcumulados = 100)
+    
+   	
+	
+	var intro = new Materia(carreraALaQuePertenece = licEnInfo, 
+							   estudiantesInscriptos = [tomas], 
+							   anioAlQuePertenece = 1,
+							   creditosQueOtorga = 100)
+							   
+	var orga= new Materia(carreraALaQuePertenece = licEnInfo, 
+							   estudiantesInscriptos = [tomas], 
+							   anioAlQuePertenece = 1,
+							   creditosQueOtorga = 150)
+							   
+	var objetos1 = new Materia(carreraALaQuePertenece = licEnInfo, 
+							   estudiantesInscriptos = [tomas], 
+							   anioAlQuePertenece = 2,
+							   creditosQueOtorga = 200
+	)
+	
+	fixture{
+		licEnInfo.materias([intro,orga,objetos1])
+	}
+	test "testX" {
+	
+		assert.equals(true, ariel.puedeCursarMateria(objetos1))
+	
+	}
+	
+}
