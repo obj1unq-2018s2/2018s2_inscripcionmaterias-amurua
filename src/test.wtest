@@ -7,6 +7,8 @@ describe ""{
 	var licEnInfo = new Carrera(materias = [])
 	
 	var ariel = new Estudiante(carrerasQueCursa = [licEnInfo], 
+		// TODO Usar los nombres de las materias en lugar de las materias es una decisión discutible, 
+		// y en este caso directamente incorrecta porque después usas la colección como si fueran materias y no strings.
 							   materiasAprobadas = ["mate", "objetos1"],
 							   creditosAcumulados = 100)
 	

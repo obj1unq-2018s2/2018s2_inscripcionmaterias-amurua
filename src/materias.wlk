@@ -8,14 +8,18 @@ class Materia {
 	var property creditosQueOtorga
 	
 	method cumpleRequisito(materia){
+		// TODO Nadie usa este código debería ser método abstracto.
 		return true
 	}
 }
 
 class MateriasCorrelativas inherits Materia{
 	var property materiasCorrelativas = []
+	// TODO Falta override, prestá atención a las indicaciones del ide.
 	method cumpleRequisito(estudiante){
 		return materiasCorrelativas.all {materiaCorrelativa => 
+			// TODO Delegar en estudiante
+			// TODO En lugar de any sería más fácil con contains.
 			estudiante.materiasAprobadas().any {materiaAprobada => materiaAprobada == materiaCorrelativa}
 		}
 	}
